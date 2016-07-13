@@ -1,0 +1,11 @@
+<h1> Checking status of delivery </h1>
+
+<% @children.each do |child| %>
+  <ul>
+    <li> <strong> Name: </strong> <%= child.name %> ----- <strong>
+      Age: </strong><%= child.age %> ----- <strong> Address: </strong><%= child.address %>
+    ------- <strong> Gift Received? </strong> <%= child.received %> </li>
+
+  </ul>
+<% end %>
+<br>

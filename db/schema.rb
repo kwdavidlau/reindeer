@@ -11,6 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160713172200) do
+
+  create_table "children", force: :cascade do |t|
+    t.integer  "reindeer_id"
+    t.string   "name"
+    t.integer  "age"
+    t.string   "address"
+    t.boolean  "received"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gifts", force: :cascade do |t|
+    t.string   "name_of_gift"
+    t.integer  "gift_value"
+    t.integer  "reindeer_id"
+    t.integer  "receiver_id"
+    t.boolean  "delivered"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "reindeers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "mobile"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

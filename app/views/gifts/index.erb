@@ -1,0 +1,25 @@
+<h1> Good gifts </h1>
+
+<form method="post" action="/gifts">
+  <div>
+    <label> Gift: </label>
+    <input type="text" name="gift" />
+  </div>
+
+  <div>
+    <label> Gift Value ($): </label>
+    <input type="text" name="gift_value"  />
+  </div>
+
+  <div>
+    <input type="submit" value="Submit!" />
+  </div>
+</form>
+
+<% @gifts.each do |gift| %>
+  <ul>
+    <li> <strong> Gift: </strong> <%= gift.name_of_gift %> ----- <strong>
+      Value of Gift: </strong><%= gift.gift_value %> </li>
+  </ul>
+<% end %>
+<br>
