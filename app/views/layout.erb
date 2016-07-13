@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!--
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-  <!-- <link rel="stylesheet" href="/stylesheets/normalize.css"> -->
-  <!--
-    application.css is where you put your styles
-  -->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/stylesheets/application.css">
+    <head>
+        <title>Rudolph 2.0</title>
+        <!--
+          normalize.css removes cross-browser differences in defaults, e.g.,
+          differences in how form elements appear between Firefox and IE
+          See: http://necolas.github.com/normalize.css/
+        -->
+        <!-- <link rel="stylesheet" href="/stylesheets/normalize.css"> -->
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/javascript/application.js"></script>
+        <!-- application.css is where you put your styles -->
+        <link rel="stylesheet" href="/stylesheets/application.css">
 
-  <title></title>
-</head>
-<body>
-  <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">Reindeer Delivery</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="/">Home</a></li>
-      <li><a href="/gifts">Gifts</a></li>
-      <li><a href="/child">Children</a></li>
-      <li><a href="/reindeer">Reindeer</a></li>
-      <li><a href="/deliver">Status Update</a></li>
-    </ul>
-  </div>
-</nav>
-  <%= yield %>
-</body>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+        <!-- application.js is where you put your javascript -->
+        <script src="/javascript/application.js"></script>
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+    </head>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Reindeer Delivery</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/gifts">Gifts</a>
+                    </li>
+                    <li>
+                        <a href="/child">Children</a>
+                    </li>
+                    <li>
+                        <a href="/reindeer">Reindeer</a>
+                    </li>
+                    <li>
+                        <a href="/deliver">Status Update</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <body>
+
+        <%= yield %>
+    </body>
 </html>
