@@ -1,10 +1,10 @@
 <!-- number of children received gifts -->
 <!-- number of reindeers -->
 
-<p> number of deliveries <%=Delivery.all.count %> </p>
+<!-- <p> number of deliveries <%=Delivery.all.count %> </p>
 
 
-<h1> children data </h1>
+<h3> children data </h3>
 <ul>
   <% @children.each do |child| %>
     <li> <%= child.name %> </li>
@@ -13,7 +13,8 @@
   <% end %>
 </ul>
 
-<h1> reindeer data </h1>
+<h3> reindeer data </h3>
+<br> <%= Reindeer.all.count %>
 <ul>
   <% Reindeer.all.each do |reindeer| %>
     <li> <%= reindeer.name %> </li>
@@ -22,9 +23,17 @@
 </ul>
 
 
-Number of Children received gifts
-
-Number of Reindeers
+<h3> Number of Children received gifts </h3>
 
 Number of gifts:
-<%= @gifts.count %>
+<%= @gifts.count %> -->
+
+<div class="clearfix">
+    <div>
+      <img src="/images/graph.png" />
+    </div>
+
+    <div>
+      20 times
+    </div>
+</div>
