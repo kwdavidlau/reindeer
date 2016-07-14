@@ -14,7 +14,7 @@ end
 
 get '/reindeer' do
   @deliveries = Delivery.all
-  @gifts = Gift.all
+  @reindeers = Reindeer.all
   erb :'reindeer/index'
 end
 
