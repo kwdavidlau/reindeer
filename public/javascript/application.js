@@ -3,7 +3,10 @@ $(document).ready(function(){
 
  // parallax init
  $('.parallax').parallax();
- 
+
+ //select init
+ $('select').material_select();
+
 $("#add_row").click(function(){
  $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
 
