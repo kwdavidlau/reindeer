@@ -1,5 +1,5 @@
 class Reindeer < ActiveRecord::Base
-  has_many :deliverys
+  has_many :deliveries
 end
 
 # create_table "reindeers", force: :cascade do |t|

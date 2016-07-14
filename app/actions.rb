@@ -1,4 +1,7 @@
 # Homepage (Root path)
+# ------ show pages
+# -----------------------
+
 get '/' do
   erb :index
 end
@@ -6,6 +9,24 @@ end
 get '/elves' do
   erb:'/elves/index'
 end
+
+# Reindeer page showing their deliveries`-------------
+
+get '/reindeer' do
+  @deliveries = Delivery.all
+  @gifts = Gift.all
+  erb :'reindeer/index'
+end
+
+# Children page showing the status of their delivery------------
+
+get '/children' do
+  @children = Child.all
+  erb :'/children/index'
+end
+
+#----- get information
+# -------------------
 
 post '/children' do
   @child = Child.new(
@@ -42,10 +63,9 @@ end
 
 # elves/show to show all the children, reindeer, and gifts ---------
 
-
 get '/show' do
   @gifts = Gift.all
-  @deliveries = Delivery.all
+  @unassigned_deliveries = Delivery.where(reindeer_id: nil)
   @reindeers = Reindeer.all
   @children = Child.all
 
@@ -57,30 +77,10 @@ get '/show' do
   end
 
   #assigning the reindeer to gifts
-  @deliveries.each do |delivery|
-    @reindeers.each do |reindeer|
-      reindeer.delivery = delivery
-    end
+  reindeer_enum = @reindeers.cycle
+  @unassigned_deliveries.each do |delivery|
+    reindeer_enum.next.deliveries << delivery
   end
-
-
 
   erb :'/elves/show'
 end
-
-# Reindeer page showing their deliveries`-------------
-
-get '/reindeer' do
-  @deliveries = Delivery.all
-  @gifts = Gift.all
-  erb :'reindeer/index'
-end
-
-# Children page showing the status of their delivery------------
-
-get '/children' do
-  @children = Child.all
-  erb :'/children/index'
-end
-
-# ------------
