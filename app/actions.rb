@@ -3,8 +3,8 @@ get '/' do
   erb :index
 end
 
-get '/Elves' do
-  erb:'/Elves/index'
+get '/elves' do
+  erb:'/elves/index'
 end
 
 get '/reindeer' do
@@ -40,9 +40,9 @@ end
 
 # ------------
 
-get '/child' do
+get '/children' do
   @children = Child.all
-  erb:'child/index'
+  erb:'children/index'
 end
 
 post '/child' do

@@ -1,0 +1,18 @@
+<div class="container">
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+        </thead>
+        <tbody>
+            <% @children.each do |child| %>
+            <tr>
+                <td><%= child.name %></td>
+                <td><%= child.age %></td>
+                <td><%= child.address %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
