@@ -1,0 +1,30 @@
+<!-- number of children received gifts -->
+<!-- number of reindeers -->
+
+<p> number of deliveries <%=Delivery.all.count %> </p>
+
+
+<h1> children data </h1>
+<ul>
+  <% @children.each do |child| %>
+    <li> <%= child.name %> </li>
+    <li> <%= child.age %> </li>
+    <li> <%= child.gift %> </li>
+  <% end %>
+</ul>
+
+<h1> reindeer data </h1>
+<ul>
+  <% Reindeer.all.each do |reindeer| %>
+    <li> <%= reindeer.name %> </li>
+    <li> <%= reindeer.email %> </li>
+  <% end %>
+</ul>
+
+
+Number of Children received gifts
+
+Number of Reindeers
+
+Number of gifts:
+<%= @gifts.count %>

@@ -36,7 +36,7 @@ post '/children' do
     received: false
   )
   @child.save
-  redirect :'/elves/index'
+  redirect :'/elves'
 end
 
 post '/reindeer' do
@@ -46,7 +46,7 @@ post '/reindeer' do
     mobile: params[:mobile]
   )
   @reindeer.save
-  redirect :'/elves/index'
+  redirect :'/elves'
 end
 
 post '/gifts' do
@@ -58,12 +58,12 @@ post '/gifts' do
   @gift.save
   @delivery.gift = @gift
   @delivery.save
-  redirect :'/elves/index'
+  redirect :'/elves'
 end
 
 # elves/show to show all the children, reindeer, and gifts ---------
 
-get '/show' do
+get '/elves/show' do
   @gifts = Gift.all
   @unassigned_deliveries = Delivery.where(reindeer_id: nil)
   @reindeers = Reindeer.all
@@ -72,15 +72,17 @@ get '/show' do
   #assigning the gifts to children
   @children.each do |child|
     @gifts.each do |gift|
+      # binding.pry
       gift.child = child if (child.gift_id.nil? && gift.child.nil?)
     end
   end
 
+
   #assigning the reindeer to gifts
   reindeer_enum = @reindeers.cycle
   @unassigned_deliveries.each do |delivery|
-    reindeer_enum.next.deliveries << delivery
+    # binding.pry
+    reindeer_enum.next.deliveries << delivery unless Reindeer.all.empty?
   end
-
   erb :'/elves/show'
 end

@@ -1,3 +1,3 @@
 class Child < ActiveRecord::Base
-  has_one :gift
+  belongs_to :gift
 end
