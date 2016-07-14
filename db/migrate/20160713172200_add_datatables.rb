@@ -22,6 +22,7 @@ class AddDatatables < ActiveRecord::Migration
 
     create_table :children do |t|
       t.references :gift
+      t.integer :age
       t.string :name
       t.string :address
       t.boolean :received

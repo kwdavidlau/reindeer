@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 20160713172200) do
 
   create_table "children", force: :cascade do |t|
     t.integer  "gift_id"
+    t.integer  "age"
     t.string   "name"
     t.string   "address"
     t.boolean  "received"
