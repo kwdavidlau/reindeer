@@ -1,50 +1,139 @@
 <div class="container">
-    <div class="col s12">
-        <h3 class="valign center-align">Enter a Gift</h3>
+    <div class="row">
+        <div class="col s12">
+            <h3 class="green-text center-align">Enter new Gifts, Children or Reindeer</h3>
+        </div>
     </div>
-</div>
-<div class="container z-depth-1">
-    <form method="post" action="/gifts">
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">cake</i>
-                <input type="text" name="gift"/>
-                <label for="name">Gift</label>
-            </div>
-            <div class=" input-field col s12">
-                <i class="material-icons prefix">attach_money</i>
-                <input type="text" name="gift_value"/>
-                <label for="gift_value">Gift Value</label>
-            </div>
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s3">
+                    <a class="active" href="#Gifts">Gifts</a>
+                </li>
+                <li class="tab col s3">
+                    <a href="#Children">Children</a>
+                </li>
+                <li class="tab col s3">
+                    <a href="#Reindeer">Reindeer</a>
+                </li>
+            </ul>
+        </div>
+        <div id="Gifts" class="col s12">
+            <form method="post" action="/gifts">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s1">&nbsp;</div>
+                        <div class="col s10">
+                            <div class="row">
+                              <div class="row">
+                                  <div class="input-field col s10">
+                                      <i class="material-icons prefix">cake</i>
+                                      <input type="text" name="gift"/>
+                                      <label for="name">Gift</label>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class=" input-field col s10">
+                                      <i class="material-icons prefix">attach_money</i>
+                                      <input type="text" name="gift_value"/>
+                                      <label for="gift_value">Gift Value</label>
+                                  </div>
+                              </div>
 
+                              <div class="row">
+                                  <div class="col s12 right-align">
+                                      <button class="green btn waves-effect waves-light " type="submit" name="action">Submit
+                                          <i class="material-icons right">send</i>
+                                      </button>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col s1">&nbsp;</div>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="row">
-            <div class="col s12 right-align">
-                <button class="green btn waves-effect waves-light " type="submit" name="action">Submit
-                    <i class="material-icons right">send</i>
-                </button>
-            </div>
+        <div id="Children" class="col s12">
+            <form action="/children" method="post">
+              <div class="container">
+                <div class="row">
+                  <div class="col s1">&nbsp;</div>
+                  <div class="col s10">
+                    <form method="post" action="/child">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_box</i>
+                                <input type="text" name="name"/>
+                                <label for="name">Name</label>
+                            </div>
+
+                            <div class=" input-field col s12">
+                                <i class="material-icons prefix">date_range</i>
+                                <input type="text" name="age"/>
+                                <label for="age">Age</label>
+                            </div>
+
+                            <div class="input-field  col s12">
+                                <i class="material-icons prefix">business</i>
+                                <input type="text" name="address"/>
+                                <label for="mobile">Address</label>
+                            </div>
+
+                            <div class="col s12 right-align">
+                                <button class="green btn waves-effect waves-light " type="submit" name="action">Submit
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                  </div>
+                  <div class="col s1">&nbsp;</div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </form>
         </div>
-    </form>
-</div>
-<div class="container">
-    <div class="col s12">
-        <h3 class="valign center-align">Our Gifts</h3>
+        <div id="Reindeer" class="col s12">
+          <form method="post" action="/reindeer">
+              <div class="container">
+                  <div class="row">
+                      <div class="col s1">&nbsp;</div>
+                      <div class="col s10">
+                          <div class="row">
+                              <div class="input-field col s12">
+                                  <i class="material-icons prefix">account_box</i>
+                                  <input type="text" name="name"/>
+                                  <label for="name">Name</label>
+                              </div>
+
+                              <div class=" input-field col s12">
+                                  <i class="material-icons prefix">email</i>
+                                  <input type="text" name="email"/>
+                                  <label for="email">Email</label>
+                              </div>
+
+                              <div class="input-field  col s12">
+                                  <i class="material-icons prefix">phone</i>
+                                  <input type="text" name="mobile"/>
+                                  <label for="mobile">Mobile</label>
+                              </div>
+
+                              <div class="col s12 right-align">
+                                  <button class="green btn waves-effect waves-light " type="submit" name="action">Submit
+                                      <i class="material-icons right">send</i>
+                                  </button>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col s1">&nbsp;</div>
+                  </div>
+              </div>
+          </form>
+        </div>
+
     </div>
-</div>
-<div class="container">
-    <% @gifts.each do |gift| %>
-    <div class="card small m5">
-        <div class="card-image">
-            <img src="images/wall-sport-green-bike.jpg">
-            <span class="card-title"><%= gift.name_of_gift %></span>
-        </div>
-        <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-        </div>
-        <div class="card-action">
-            <p><%= gift.gift_value  %></p>
-        </div>
-    </div>
-    <% end %>
 </div>

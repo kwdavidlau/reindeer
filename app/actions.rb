@@ -3,6 +3,9 @@ get '/' do
   erb :index
 end
 
+get '/Elves' do
+  erb:'/Elves/index'
+end
 
 get '/reindeer' do
   @reindeers = Reindeer.all
