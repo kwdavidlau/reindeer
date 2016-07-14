@@ -63,6 +63,7 @@ end
 
 # elves/show to show all the children, reindeer, and gifts ---------
 
+
 get '/elves/show' do
   @gifts = Gift.all
   @unassigned_deliveries = Delivery.where(reindeer_id: nil)
@@ -80,8 +81,8 @@ get '/elves/show' do
 
   #assigning the reindeer to gifts
   reindeer_enum = @reindeers.cycle
+
   @unassigned_deliveries.each do |delivery|
-    # binding.pry
     reindeer_enum.next.deliveries << delivery unless Reindeer.all.empty?
   end
   erb :'/elves/show'
