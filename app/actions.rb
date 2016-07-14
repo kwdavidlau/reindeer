@@ -73,7 +73,7 @@ end
 get '/reindeer' do
   @deliveries = Delivery.all
   @gifts = Gift.all
-  erb :'/gifts/index'
+  erb :'reindeer/index'
 end
 
 # Children page showing the status of their delivery------------
