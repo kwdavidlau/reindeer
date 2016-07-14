@@ -13,23 +13,28 @@
 ActiveRecord::Schema.define(version: 20160713172200) do
 
   create_table "children", force: :cascade do |t|
-    t.integer  "reindeer_id"
+    t.integer  "gift_id"
     t.string   "name"
-    t.integer  "age"
     t.string   "address"
     t.boolean  "received"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "deliveries", force: :cascade do |t|
+    t.integer  "reindeer_id"
+    t.datetime "time_to_deliver"
+    t.boolean  "delivery_status", default: false
+    t.index ["reindeer_id"], name: "index_deliveries_on_reindeer_id"
+  end
+
   create_table "gifts", force: :cascade do |t|
+    t.integer  "delivery_id"
     t.string   "name_of_gift"
     t.integer  "gift_value"
-    t.integer  "reindeer_id"
-    t.integer  "receiver_id"
-    t.boolean  "delivered"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["delivery_id"], name: "index_gifts_on_delivery_id"
   end
 
   create_table "reindeers", force: :cascade do |t|

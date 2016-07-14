@@ -7,9 +7,15 @@ get '/elves' do
   erb:'/elves/index'
 end
 
-get '/reindeer' do
-  @reindeers = Reindeer.all
-  erb :'/reindeer/index'
+post '/children' do
+  @child = Child.new(
+    name: params[:name],
+    age: params[:age],
+    address: params[:address],
+    received: false
+  )
+  @child.save
+  redirect :'/elves/index'
 end
 
 post '/reindeer' do
@@ -19,46 +25,62 @@ post '/reindeer' do
     mobile: params[:mobile]
   )
   @reindeer.save
-  redirect :'/reindeer'
-end
-
-# -------------
-
-get '/gifts' do
-  @gifts = Gift.all
-  erb :'/gifts/index'
+  redirect :'/elves/index'
 end
 
 post '/gifts' do
+  @delivery = Delivery.new
   @gift = Gift.new(
     name_of_gift: params[:gift],
     gift_value: params[:gift_value]
   )
   @gift.save
-  redirect :'/gifts'
+  @delivery.gift = @gift
+  @delivery.save
+  redirect :'/elves/index'
 end
 
-# ------------
+# elves/show to show all the children, reindeer, and gifts ---------
+
+
+get '/show' do
+  @gifts = Gift.all
+  @deliveries = Delivery.all
+  @reindeers = Reindeer.all
+  @children = Child.all
+
+  #assigning the gifts to children
+  @children.each do |child|
+    @gifts.each do |gift|
+      gift.child = child if (child.gift_id.nil? && gift.child.nil?)
+    end
+  end
+
+  #assigning the reindeer to gifts
+  @deliveries.each do |delivery|
+    @reindeers.each do |reindeer|
+      reindeer.delivery = delivery
+    end
+  end
+
+
+
+  erb :'/elves/show'
+end
+
+# Reindeer page showing their deliveries`-------------
+
+get '/reindeer' do
+  @deliveries = Delivery.all
+  @gifts = Gift.all
+  erb :'/gifts/index'
+end
+
+# Children page showing the status of their delivery------------
 
 get '/children' do
   @children = Child.all
-  erb:'children/index'
-end
-
-post '/child' do
-  @child = Child.new(
-    name: params[:name],
-    age: params[:age],
-    address: params[:address],
-    received: false
-  )
-  @child.save
-  redirect :'/child'
+  erb :'/children/index'
 end
 
 # ------------
-
-get '/deliver' do
-  @children = Child.all
-  erb :'/deliver/index'
-end

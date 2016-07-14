@@ -1,3 +1,4 @@
 class Gift < ActiveRecord::Base
-  belongs_to :child
+  has_one :child
+  has_one :delivery
 end
