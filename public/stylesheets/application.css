@@ -18,16 +18,57 @@ footer.page-footer {
     margin-top: 0px;
 }
 
-.clearfix{
-  height: 70px;
-  width: 130px;
-  background-color: #2ecc71;
+.mini-charts-item {
+  position: relative;
+  margin-bottom: 30px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.15);
 }
 
-.clearfix img{
-  height: 30px;
-  width: 50px;
+.bgm-lightgreen {
+  background-color: #8BC34A!important;
 }
-.overwrite:focus{
-  border-bottom: 1px solid #000000 !important;
+
+.mini-charts-item .chart {
+  padding: 34px 28px 0;
+  float: left;
+}
+
+.mini-charts-item .chart img {
+  margin-top: -16px;
+  margin-left: -7px;
+  margin-right: 17px;
+}
+
+.mini-charts-item .count {
+    overflow: hidden;
+    color: rgba(255,255,255,.9);
+    padding: 16px 12px;
+    text-align: left;
+}
+
+
+.mini-charts-item .count h2{
+  margin-top: 0px;
+  margin-bottom: -5px;
+}
+
+.clearfix {
+  position: relative;
+  z-index: 1;
+}
+
+.bgm-purple {
+    background-color: #BA68C8!important;
+}
+
+.bgm-orange {
+    background-color: #FF9800!important;
+}
+
+.bgm-bluegray {
+    background-color: #607D8B!important;
+}
+
+img.responsive-img, video.responsive-video {
+  max-width: 75%;
 }

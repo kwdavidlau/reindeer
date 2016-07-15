@@ -13,6 +13,7 @@ end
 # Reindeer page showing their deliveries`-------------
 
 get '/reindeer' do
+    # binding.pry
     @deliveries = Delivery.all
     @reindeers = Reindeer.all
     erb :'reindeer/index'
@@ -64,6 +65,7 @@ end
 # elves/show to show all the children, reindeer, and gifts ---------
 
 get '/elves/show' do
+    # binding.pry
     @gifts = Gift.all
     @unassigned_deliveries = Delivery.where(reindeer_id: nil)
     @reindeers = Reindeer.all

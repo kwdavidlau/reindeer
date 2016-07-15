@@ -1,3 +1,91 @@
+
+<div class="section"> </div>
+<br><br>
+<div class="container valign-wrapper" >
+  <div class="row" style="text-align:center">
+    <div class="col s12 valign"><img src="/images/graph.png" class="responsive-img" /> </div>
+  </div>
+</div>
+
+<div class="section"> </div>
+<br>
+<div class="container">
+<div class="mini-charts">
+  <div class="row">
+    <div class="col-sm-6 col-md-3" >
+      <div class="mini-charts-item bgm-lightgreen">
+        <div class="clearfix"> <!-- not yet -->
+
+            <!-- <div class="row">
+              <div class="col s6">
+                <div class="chart stats-bar-2">
+                    <img src="/images/Traffic.png" style="width:115%"/>
+                </div>
+              </div>
+              <div class="col s6">
+                <div class="count center-align">
+                  <small> Reindeer </small>
+                  <h2> <%= Reindeer.all.count %> </h2>
+                </div>
+              </div>
+            </div> -->
+
+
+            <div class="chart stats-bar-2">
+              <img src="/images/Traffic.png" style="width:110%"/>
+            </div>
+            <div class="count">
+              <small> Deliveries </small>
+              <h2> <%= Delivery.all.count %> </h2>
+            </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <div class="mini-charts-item bgm-purple">
+        <div class="clearfix">
+          <div class="chart stats-bar-2">
+            <img src="/images/Traffic.png" style="width:110%"/>
+          </div>
+          <div class="count">
+            <small> Deliveries </small>
+            <h2> <%= Delivery.all.count %> </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-3">
+      <div class="mini-charts-item bgm-orange">
+        <div class="clearfix">
+          <div class="chart stats-bar-2">
+            <img src="/images/plotchart.png" style="width:110%"/>
+          </div>
+          <div class="count">
+            <small> Children with Gifts </small>
+            <h2> <%= Child.all.where('received=?',true).count %> </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-md-3">
+      <div class="mini-charts-item bgm-bluegray">
+        <div class="clearfix">
+          <div class="chart stats-bar-2">
+            <img src="/images/plotchart.png" style="width:110%"/>
+          </div>
+          <div class="count">
+            <small> Gifts Donated </small>
+            <h2> <%= Gift.all.count %> </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+</div>
 <!-- number of children received gifts -->
 <!-- number of reindeers -->
 
@@ -28,6 +116,49 @@
 Number of gifts:
 <%= @gifts.count %> -->
 
+
+
+
+<!--
+
+
+<div class="section"> </div>
+<div class="container">
+  <div class="row" style="text-align:center">
+    <div class="col s3 valign-wrapper left" style="background-color:#2ecc71">
+      <div style="background-color:#27ae60"> </div>
+      <div> <img src="/images/Traffic.png" class="responsive-img"/> </div>
+      <div class="right-align">
+        <small> Number of Reindeers </small>
+        <h6> 88,888 </h6>
+      </div>
+    </div>
+
+    <div class="col s3" style="background-color:#9b59b6"> Hi </div>
+    <div class="col s3" style="background-color:#e67e22"> Hi </div>
+    <div class="col s3" style="background-color:#34495e"> Hi </div>
+</div>
+
+<br>
+<br> -->
+
+<!-- <div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Card Title</span>
+        <img src="/images/random-chart.png" height=300 />
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 <div class="clearfix">
     <div>
       <img src="/images/graph.png" />
@@ -36,4 +167,4 @@ Number of gifts:
     <div>
       20 times
     </div>
-</div>
+</div> -->
