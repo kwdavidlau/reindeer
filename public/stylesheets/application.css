@@ -11,8 +11,8 @@ main {
 
 /*parallax height*/
 
-.parallax-container {
-    height: 400px;
+.parallax-container.p1 {
+    height: 720px;
 }
 footer.page-footer {
     margin-top: 0px;
@@ -72,3 +72,30 @@ footer.page-footer {
 img.responsive-img, video.responsive-video {
   max-width: 75%;
 }
+
+/* Home */
+#hero-title {
+  line-height: 1.5em;
+  margin-top: 10%; }
+
+#hero-title-one {
+  margin: 0px 0px 20px 0px;
+  line-height: 1.5em; }
+
+#hero-title-two {
+  margin: 0px;
+  line-height: 0.5em; }
+
+.hero-btn {
+  margin: 10px; }
+
+#hero {
+  background-position: center center;
+  background-size: cover;
+  background-image: url("/static/images/white-desktop.jpg"); }
+
+#hero-text-container .hero-btn {
+    min-width: 190px; }
+
+h2 {
+  font-size: 2.92rem; }

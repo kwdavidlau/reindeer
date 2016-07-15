@@ -20,6 +20,10 @@ end
 
 # bundle install --without test --without development
 group :production do
-  # use postgres in production, or move outside a group if your app uses postgres for development and production 
+  # use postgres in production, or move outside a group if your app uses postgres for development and production
   gem 'pg'
 end
+
+#twilio
+gem 'twilio-ruby'
+gem 'twilio-rb'
