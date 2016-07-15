@@ -28,6 +28,6 @@ footer.page-footer {
   height: 30px;
   width: 50px;
 }
-/*.section.white{
-  height: 250px;
-}*/
+.overwrite:focus{
+  border-bottom: 1px solid #000000 !important;
+}
