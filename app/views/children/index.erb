@@ -1,43 +1,59 @@
+
 <div class="container">
     <div class="row">
         <div class="col s12">
             <ul class="collapsible" data-collapsible="accordion">
                 <% @children.each do |child| %>
                 <li>
-                <div class="collapsible-header">
-                    <i class="material-icons">person outline</i><%= child.name %></div>
-                  <% if child.gift.nil? %>
+                    <div class="collapsible-header">
+                        <i class="material-icons">person outline</i><%= child.name %></div>
+                    <% if child.gift.nil? %>
                     <div class="collapsible-body">
-                          <p class="flow-text">This child has not been assigned a gift.</p>
+                        <p class="flow-text">This child has not been assigned a gift.</p>
                     </div>
-                  </li>
-                  <% else%>
-                      <div class="collapsible-body">
-                          <div class="container">
-                              <div class="card">
-                                  <div class="card-image waves-effect waves-block waves-light card small">
-                                      <img class="activator" src="images/wall-sport-green-bike.jpg">
-                                  </div>
-                                  <div class="card-content">
-                                      <%# binding.pry %>
-                                      <span class="card-title activator grey-text text-darken-4"><%=child.gift.name_of_gift %>
-                                          <i class="material-icons right">more_vert</i>
-                                      </span>
-                                  </div>
-                                  <div class="card-reveal">
-                                      <span class="card-title grey-text text-darken-4"><%=%>
-                                          <i class="material-icons right">close</i>
-                                      </span>
-                                      <p>Delivery Date</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </li>
-                  <% end %>
-                <% end %>
-            </ul>
-        </div>
+                </li>
+            <% else%>
+                <div class="collapsible-body">
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light card small">
+                                <img class="activator" src="images/wall-sport-green-bike.jpg">
+                            </div>
+                            <div class="card-content">
+                                <%# binding.pry %>
+                                <span class="card-title activator grey-text text-darken-4"><%=child.gift.name_of_gift %>
+                                    <i class="material-icons right">more_vert</i>
+                                </span>
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4"><%=%>
+                                    <i class="material-icons right">close</i>
+                                </span>
+                                <div class="row">
+                                    <div class="col s12 m6">
+                                        <div class="card green darken-2">
+                                            <div class="card-content white-text">
+                                                <span class="card-title">Reindeer Name: <%=child.gift.delivery.reindeer.name %></span>
+                                                <p>The gift will be delivered on the following date: <%=child.gift.delivery.time_to_deliver %></p>
+                                            </div>
+                                            <div class="card-action">
+                                                <a href="#">New Delivery Date</a>
+                                                <a href="#">Request a new Reindeer</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <p><strong></strong> </p>
+                                      <p><strong></strong></p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <% end %>
+            <% end %>
+        </ul>
     </div>
+</div>
 </div>
 </div>
